@@ -74,16 +74,50 @@ search `index.html` for `?text=` — the message must be URL-encoded
 
 ---
 
-## Publishing it
+## The live site
 
-The site is static files, so it can go online free:
+**https://zorotan.github.io/topsavewholesale/**
 
-- **Netlify Drop** — go to [app.netlify.com/drop](https://app.netlify.com/drop) and drag
-  this whole folder onto the page. It's live in about 30 seconds. Easiest option.
-- **GitHub Pages** or **Cloudflare Pages** — also free, needs a GitHub account.
+Hosted free on GitHub Pages from the repo
+[zorotan/topsavewholesale](https://github.com/zorotan/topsavewholesale),
+served over HTTPS.
 
-Once it's live, point your domain at it and add the link to your Instagram,
-Facebook and TikTok bios — that's where most of your traffic will come from.
+### Publishing an update
+
+Edit the files, then run these three commands from this folder:
+
+```bash
+git add -A
+```
+
+```bash
+git commit -m "Update opening hours"
+```
+
+```bash
+git push
+```
+
+The live site updates about a minute later. Change the message in quotes to
+describe whatever you changed.
+
+### What is and isn't published
+
+`.gitignore` keeps these on your computer only — they are **not** on the public
+internet: `photos/` (the 76MB of print PDFs), `company_details.txt`, `docs/`,
+and `.claude/`. Only `index.html` and `assets/` are published.
+
+### Using your own domain
+
+If you buy a domain (e.g. `topsavewholesale.com.my`), you can point it here for
+free — no re-hosting needed. In the repo go to **Settings → Pages → Custom
+domain**, enter it, then add the DNS records GitHub shows you at your domain
+registrar. Ask me when you get to it.
+
+### Next step
+
+Add the link to your Instagram, Facebook and TikTok bios — that's where most of
+your traffic will come from.
 
 ---
 
