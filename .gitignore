@@ -1,0 +1,16 @@
+# Keep private / local-only files off the public site
+
+# Original print artwork (76MB of PDFs) and source images
+photos/
+
+# Business details and the design spec — no need to publish these
+company_details.txt
+docs/
+
+# Local tooling
+.claude/
+
+# OS junk
+Thumbs.db
+desktop.ini
+.DS_Store
