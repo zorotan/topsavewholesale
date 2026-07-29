@@ -331,14 +331,24 @@ img { max-width: 100%; display: block; }
   .header-cta { margin-left: auto; }
   .brand-logo { height: 34px; }
 
+  /* The menu is absolutely positioned, so it never affected document flow —
+     the previous max-height animation only clipped it visually, which meant
+     the links stayed keyboard-focusable inside a collapsed box. Animating
+     opacity and transform avoids the layout thrash, and visibility takes the
+     closed menu out of the tab order. visibility is delayed on close so the
+     fade can finish, and switches immediately on open. */
   .nav {
     position: absolute; top: var(--header-h); left: 0; right: 0;
     flex-direction: column; gap: 0; margin: 0;
     background: #fff; border-bottom: 1px solid var(--line);
     box-shadow: 0 12px 24px rgba(16,54,124,.10);
-    max-height: 0; overflow: hidden; transition: max-height .3s ease;
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity .22s ease, transform .22s ease, visibility 0s linear .22s;
   }
-  .nav.open { max-height: 420px; }
+  .nav.open {
+    opacity: 1; visibility: visible; transform: translateY(0);
+    transition: opacity .22s ease, transform .22s ease, visibility 0s;
+  }
   .nav a { padding: .95rem 1.25rem; border-bottom: 1px solid var(--line); }
   .nav a::after { display: none; }
 }
