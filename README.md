@@ -76,11 +76,23 @@ search `index.html` for `?text=` — the message must be URL-encoded
 
 ## The live site
 
-**https://zorotan.github.io/topsavewholesale/**
+**https://topsavewholesale.com**
 
 Hosted free on GitHub Pages from the repo
 [zorotan/topsavewholesale](https://github.com/zorotan/topsavewholesale),
-served over HTTPS.
+served over HTTPS with a certificate GitHub renews automatically.
+
+`www.topsavewholesale.com` and the old `zorotan.github.io/topsavewholesale/`
+address both redirect here, so previously shared links keep working.
+
+### How the domain is wired
+
+- Domain registered at **Exabytes**; DNS zone lives in their **DNS Manager**.
+- Four `A` records on `@` point to GitHub's servers
+  (`185.199.108–111.153`), and a `CNAME` on `www` points to `zorotan.github.io`.
+- The **`CNAME` file in this repo** holds `topsavewholesale.com`. Do not delete
+  it — Pages deploys from the branch root, so if that file disappears the site
+  silently reverts to the github.io address.
 
 ### Publishing an update
 
@@ -107,17 +119,10 @@ describe whatever you changed.
 internet: `photos/` (the 76MB of print PDFs), `company_details.txt`, `docs/`,
 and `.claude/`. Only `index.html` and `assets/` are published.
 
-### Using your own domain
-
-If you buy a domain (e.g. `topsavewholesale.com.my`), you can point it here for
-free — no re-hosting needed. In the repo go to **Settings → Pages → Custom
-domain**, enter it, then add the DNS records GitHub shows you at your domain
-registrar. Ask me when you get to it.
-
 ### Next step
 
-Add the link to your Instagram, Facebook and TikTok bios — that's where most of
-your traffic will come from.
+Add **topsavewholesale.com** to your Instagram, Facebook and TikTok bios —
+that's where most of your traffic will come from.
 
 ---
 
