@@ -9,10 +9,12 @@
   --navy-light:  #1B4CA8;
   --gold:        #F6BE1A;
   --gold-dark:   #D9A409;
-  /* Darkened from WhatsApp's #25D366, which is only 2.0:1 against white text.
-     These clear WCAG AA while still reading as the WhatsApp green. */
-  --wa:          #0F7A3D;  /* 5.4:1 with white text */
-  --wa-dark:     #0B5E2F;  /* hover — 7.9:1 */
+  /* WhatsApp brand green, kept deliberately. White on #25D366 is 2.0:1, under
+     the WCAG AA minimum of 4.5:1 — an accepted exception: the familiar green is
+     what makes people tap, and every button also carries the WhatsApp logo and
+     a text label, so the meaning never depends on colour alone. */
+  --wa:          #25D366;
+  --wa-dark:     #1DA851;
 
   --ink:         #14213A;
   --body:        #4A5568;
@@ -88,8 +90,8 @@ img { max-width: 100%; display: block; }
 .btn-sm { padding: .58rem 1.1rem; font-size: .88rem; }
 .btn-sm .ico { width: 17px; height: 17px; }
 
-.btn-wa      { background: var(--wa); color: #fff; box-shadow: 0 6px 18px rgba(15,122,61,.32); }
-.btn-wa:hover{ background: var(--wa-dark); box-shadow: 0 10px 26px rgba(15,122,61,.4); }
+.btn-wa      { background: var(--wa); color: #fff; box-shadow: 0 6px 18px rgba(37,211,102,.32); }
+.btn-wa:hover{ background: var(--wa-dark); box-shadow: 0 10px 26px rgba(37,211,102,.4); }
 
 .btn-primary      { background: var(--navy); color: #fff; box-shadow: 0 6px 18px rgba(16,54,124,.24); }
 .btn-primary:hover{ background: var(--navy-dark); }
@@ -292,7 +294,7 @@ img { max-width: 100%; display: block; }
   width: 58px; height: 58px; border-radius: 50%;
   display: grid; place-items: center;
   background: var(--wa); color: #fff;
-  box-shadow: 0 6px 22px rgba(15,122,61,.45);
+  box-shadow: 0 6px 22px rgba(37,211,102,.45);
   transition: transform .2s ease, background .2s ease;
 }
 .wa-float:hover { background: var(--wa-dark); transform: scale(1.07); }
