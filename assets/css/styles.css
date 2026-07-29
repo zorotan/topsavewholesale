@@ -34,6 +34,23 @@
 
 * { box-sizing: border-box; }
 
+/* Visible keyboard focus. :focus-visible so the ring appears for keyboard and
+   assistive-tech users without showing on every mouse click. Navy reads at
+   ~11:1 on the light sections; the dark surfaces switch to gold (~8:1 on navy),
+   since gold on white would only reach 1.8:1 and fail as a focus indicator. */
+:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.hero :focus-visible,
+.contact :focus-visible,
+.site-footer :focus-visible { outline-color: var(--gold); }
+
+/* Keeps <picture> transparent to the surrounding flex/grid layout so the
+   existing .brand-logo / .hero-logo / .footer-logo rules still apply. */
+picture { display: contents; }
+
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px); }
 
 body {
