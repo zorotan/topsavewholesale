@@ -14,7 +14,7 @@
 
   --ink:         #14213A;
   --body:        #4A5568;
-  --muted:       #7B8697;
+  --muted:       #5C6779;  /* 5.7:1 on white, 5.3:1 on --bg-alt — WCAG AA */
   --line:        #E4E8EF;
   --bg:          #FFFFFF;
   --bg-alt:      #F5F7FB;
@@ -65,7 +65,10 @@ img { max-width: 100%; display: block; }
 }
 .eyebrow-dark { color: var(--navy-light); }
 
-.lead { font-size: 1.08rem; color: var(--body); }
+/* Line length capped to ~75 characters. Deliberately in rem, not ch: this
+   font's "0" glyph is ~0.73em, so 68ch computed to 860px — wider than the
+   container, and the cap did nothing. */
+.lead { font-size: 1.08rem; color: var(--body); max-width: 40rem; margin-inline: auto; }
 .lead-light { color: rgba(255,255,255,.82); }
 
 /* ---------- Buttons ---------- */
@@ -152,7 +155,7 @@ img { max-width: 100%; display: block; }
 .hero-logo { height: clamp(52px, 9vw, 76px); width: auto; margin: 0 auto 1.75rem; border-radius: 10px; }
 .hero-sub {
   font-size: clamp(1.02rem, 2vw, 1.16rem); color: rgba(255,255,255,.85);
-  max-width: 60ch; margin: 1.1rem auto 2rem;
+  max-width: 38rem; margin: 1.1rem auto 2rem;
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; justify-content: center; }
 
@@ -193,7 +196,7 @@ img { max-width: 100%; display: block; }
 .cat p { font-size: .89rem; color: var(--muted); margin: 0; line-height: 1.5; }
 
 .cat-note {
-  margin: 2.25rem auto 0; text-align: center; max-width: 60ch;
+  margin: 2.25rem auto 0; text-align: center; max-width: 38rem;
   font-size: 1rem; color: var(--body);
 }
 .cat-note a { font-weight: 700; color: var(--navy); border-bottom: 2px solid var(--gold); }
@@ -274,7 +277,7 @@ img { max-width: 100%; display: block; }
 .footer-inner { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2.5rem; }
 .footer-logo { height: 40px; width: auto; border-radius: 6px; margin-bottom: 1rem; }
 .footer-tag { color: var(--gold); font-weight: 600; margin: 0; }
-.footer-col h4 { color: #fff; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .8rem; }
+.footer-col h3 { color: #fff; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .8rem; }
 .footer-col p { margin: 0; line-height: 1.85; }
 .site-footer a { color: rgba(255,255,255,.85); }
 .site-footer a:hover { color: var(--gold); text-decoration: none; }
