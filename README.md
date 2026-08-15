@@ -32,7 +32,7 @@ Everything below is in `index.html`. Search for the text, change it, save, refre
 | To change | Search for |
 |---|---|
 | Phone / WhatsApp number | `60137157918` — appears in 8 places, replace all |
-| Email | `topsavewholesale@gmail.com` |
+| Email | `sales@topsavewholesale.com` |
 | Address | `Unit L11` — appears in 2 places (Visit Us, footer) |
 | Opening hours | `10:00am to 10:00pm` and `10am – 10pm` |
 | Product categories | the `<div class="cat">` blocks under "What We Stock" |
@@ -126,10 +126,31 @@ that's where most of your traffic will come from.
 
 ---
 
-## One thing worth doing
+## Email
 
-`assets/img/tsw-logo.png` is 2123×741px and about 1MB. The site only ever
-displays it at 40–76px tall, so that's a 1MB download for nothing — noticeable
-on mobile data. Run it through [tinypng.com](https://tinypng.com) (free, no
-signup) and replace the file with the compressed version. Nothing else needs to
-change.
+`sales@topsavewholesale.com` is hosted on **Zoho Mail** (free plan). The free
+plan has no IMAP, POP or forwarding, so that mailbox lives only in Zoho's
+webmail and mobile app — **not** in Gmail. Keep the Zoho Mail app installed with
+notifications on, or enquiries from the website will go unread.
+
+DNS for mail sits alongside the website records in the Exabytes DNS Manager:
+three `MX` records to Zoho, plus `SPF`, `DKIM` (`zmail._domainkey`) and `DMARC`
+(`_dmarc`). All verified passing.
+
+DMARC is at `p=none` (monitor only), with aggregate reports going to
+`topsavewholesale@gmail.com`. Once a month of reports shows nothing legitimate
+failing, it can be tightened to `p=quarantine` by **editing** the existing
+`_dmarc` record — never by adding a second one.
+
+Upgrading to Zoho Mail Lite (around RM 48/year) would add forwarding and IMAP,
+putting this mailbox into the Gmail app directly.
+
+## About the logo files
+
+- `tsw-logo-web.webp` (15 KB) — what visitors actually load
+- `tsw-logo-web.png` (203 KB) — fallback for browsers without WebP, plus favicon
+- `tsw-logo.png` (1 MB) — full-size original, used only for social link previews
+
+If you ever replace the logo, regenerate all three. Don't point the page at the
+1 MB original — that was the single heaviest thing on the site before it was
+resized.
