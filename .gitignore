@@ -9,6 +9,7 @@ docs/
 
 # Local tooling
 .claude/
+.impeccable/
 
 # OS junk
 Thumbs.db
