@@ -317,11 +317,34 @@ img { max-width: 100%; display: block; }
 .wa-float:hover { background: var(--wa-dark); transform: scale(1.07); }
 .wa-float svg { width: 31px; height: 31px; fill: currentColor; }
 
+
+/* ---------- Inside the shop ----------
+   Unlike the "Our Range" banners (designed artwork that must not be cropped),
+   these are photographs, so every tile is pre-cropped to a uniform 4:3 and the
+   grid can stay even. */
+.shop-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.15rem;
+}
+.shop-item {
+  display: flex; flex-direction: column;
+  margin: 0; overflow: hidden;
+  border-radius: var(--radius); background: #fff;
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.shop-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.shop-item img { width: 100%; height: auto; display: block; }
+.shop-item figcaption {
+  flex: 1;
+  padding: .85rem 1.05rem;
+  font-size: .88rem; font-weight: 600; line-height: 1.5; color: var(--muted);
+}
 /* =========================================================
    Responsive
    ========================================================= */
 @media (max-width: 980px) {
   .visit-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .shop-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
 }
@@ -364,6 +387,7 @@ img { max-width: 100%; display: block; }
   .cat p { font-size: .8rem; }
   .cat svg { width: 26px; height: 26px; }
   .gallery-grid { grid-template-columns: 1fr; }
+  .shop-grid { grid-template-columns: 1fr; }
   .wa-float { width: 54px; height: 54px; bottom: 14px; right: 14px; }
 }
 

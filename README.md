@@ -154,3 +154,17 @@ putting this mailbox into the Gmail app directly.
 If you ever replace the logo, regenerate all three. Don't point the page at the
 1 MB original — that was the single heaviest thing on the site before it was
 resized.
+
+## The "Inside the Shop" section
+
+Real photographs of the store, in `assets/shop/`, shown as a uniform 3-column
+grid (2 on tablet, 1 on phone). Each is served as WebP with a JPEG fallback via
+`<picture>`.
+
+Unlike the "Our Range" banners — designed artwork that must never be cropped —
+these are photographs, so each one is pre-cropped to a uniform 4:3 (1200x900)
+and the grid stays even.
+
+**To swap a photo:** drop the new file in `photos/`, then regenerate a 1200x900
+WebP and JPEG pair into `assets/shop/` under the same name. Originals stay in
+`photos/`, which is gitignored and never published.
