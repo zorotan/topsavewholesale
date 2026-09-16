@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan Price | Top Save Wholesale</title>
+<meta name="description" content="Scan the barcode or QR code on any product at Top Save Wholesale to see its photo and price instantly.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://topsavewholesale.com/scan.html">
+
+<link rel="icon" type="image/png" href="assets/img/tsw-logo-web.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html#top" class="brand" aria-label="Top Save Wholesale home">
+      <picture>
+        <source srcset="assets/img/tsw-logo-web.webp" type="image/webp">
+        <img src="assets/img/tsw-logo-web.png" alt="Top Save Wholesale" class="brand-logo" width="640" height="223">
+      </picture>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html#what-we-do">What We Do</a>
+      <a href="index.html#stock">What We Stock</a>
+      <a href="index.html#why-us">Why Us</a>
+      <a href="index.html#gallery">Our Range</a>
+      <a href="index.html#shop">Inside the Shop</a>
+      <a href="index.html#visit">Visit Us</a>
+      <a href="scan.html" aria-current="page">Scan Price</a>
+    </nav>
+
+    <a class="btn btn-wa btn-sm header-cta"
+       href="https://wa.me/60137157918?text=Hi%20Top%20Save%20Wholesale%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20enquire%20about%20your%20products."
+       target="_blank" rel="noopener">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.53.06-1.02.26-3.43-.72-2.9-1.18-4.72-4.15-4.86-4.34-.14-.2-1.15-1.55-1.15-2.95s.72-2.1 1-2.38a1 1 0 0 1 .73-.34h.52c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.1.2-.15.32-.3.49-.14.17-.3.38-.44.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.97 1.09.97 2 1.28 2.29 1.42.28.15.45.12.62-.07.17-.2.71-.83.9-1.11.19-.29.38-.24.64-.15.26.1 1.65.78 1.94.92.28.15.47.22.54.34.07.12.07.68-.18 1.34Z"/></svg>
+      WhatsApp
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= SCAN ================= -->
+<section class="section" id="top">
+  <div class="container narrow center">
+    <p class="eyebrow eyebrow-dark">In-Store Price Check</p>
+    <h1>Scan a Barcode or QR Code</h1>
+    <p class="lead">
+      Point your camera at the barcode or QR code on any product to see its photo and price
+      right away &mdash; no need to flag down staff.
+    </p>
+
+    <div class="scan-panel">
+      <div id="reader" class="scan-reader" hidden></div>
+
+      <div class="scan-actions">
+        <button type="button" id="scanStartBtn" class="btn btn-primary btn-lg">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2M3 12h18"/></svg>
+          Start Scanning
+        </button>
+        <button type="button" id="scanStopBtn" class="btn btn-ghost btn-lg" hidden>Stop Scanning</button>
+      </div>
+
+      <p class="scan-status" id="scanStatus" role="status" aria-live="polite"></p>
+
+      <form id="manualForm" class="scan-manual">
+        <label for="manualInput">Or type the code printed under the barcode</label>
+        <div class="scan-manual-row">
+          <input type="text" id="manualInput" inputmode="text" placeholder="e.g. BE000001" autocomplete="off">
+          <button type="submit" class="btn btn-ghost">Look Up</button>
+        </div>
+      </form>
+
+      <div id="scanResult" class="scan-result" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <picture>
+        <source srcset="assets/img/tsw-logo-web.webp" type="image/webp">
+        <img src="assets/img/tsw-logo-web.png" alt="Top Save Wholesale" class="footer-logo" width="640" height="223">
+      </picture>
+      <p class="footer-tag">Best One Stop Wholesale Center in Town</p>
+    </div>
+    <div class="footer-col">
+      <h3>Visit</h3>
+      <p>Unit L11, Basement 1, Pusat Perdagangan Kuchai,<br>No.2, Jalan 1/127, Off Jalan Kuchai Lama,<br>58200 Kuala Lumpur</p>
+    </div>
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p>
+        <a href="https://wa.me/60137157918" target="_blank" rel="noopener">WhatsApp +60 13-715 7918</a><br>
+        <a href="mailto:sales@topsavewholesale.com">sales@topsavewholesale.com</a><br>
+        Open daily 10am &ndash; 10pm
+      </p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year">2026</span> Top Save Wholesale Sdn Bhd. All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="wa-float"
+   href="https://wa.me/60137157918?text=Hi%20Top%20Save%20Wholesale%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20enquire%20about%20your%20products."
+   target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.53.06-1.02.26-3.43-.72-2.9-1.18-4.72-4.15-4.86-4.34-.14-.2-1.15-1.55-1.15-2.95s.72-2.1 1-2.38a1 1 0 0 1 .73-.34h.52c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.14.12.31.02.5-.1.2-.15.32-.3.49-.14.17-.3.38-.44.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.97 1.09.97 2 1.28 2.29 1.42.28.15.45.12.62-.07.17-.2.71-.83.9-1.11.19-.29.38-.24.64-.15.26.1 1.65.78 1.94.92.28.15.47.22.54.34.07.12.07.68-.18 1.34Z"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/scan.js"></script>
+</body>
+</html>

@@ -34,6 +34,10 @@
 
 * { box-sizing: border-box; }
 
+/* The .btn class (and others) set `display`, which otherwise wins the
+   cascade over the browser's default [hidden] rule at equal specificity. */
+[hidden] { display: none !important; }
+
 /* Visible keyboard focus. :focus-visible so the ring appears for keyboard and
    assistive-tech users without showing on every mouse click. Navy reads at
    ~11:1 on the light sections; the dark surfaces switch to gold (~8:1 on navy),
@@ -376,6 +380,81 @@ img { max-width: 100%; display: block; }
   .nav a::after { display: none; }
 }
 
+/* ---------- Scan Price page ---------- */
+.scan-panel {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  text-align: left;
+}
+
+.scan-reader {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 1.5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.scan-actions { display: flex; justify-content: center; gap: .9rem; flex-wrap: wrap; }
+
+.scan-status {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: .92rem;
+  color: var(--muted);
+  min-height: 1.3em;
+}
+
+.scan-manual { margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.scan-manual label { display: block; font-size: .88rem; font-weight: 600; color: var(--body); margin-bottom: .55rem; }
+.scan-manual-row { display: flex; gap: .7rem; }
+.scan-manual-row input {
+  flex: 1 1 auto;
+  padding: .78rem 1rem;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  font-family: var(--font);
+  font-size: .95rem;
+  color: var(--ink);
+}
+.scan-manual-row input:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+
+.scan-result:empty { display: none; }
+
+.scan-card {
+  margin-top: 1.75rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.25rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.scan-card img, .scan-card-noimg {
+  width: 110px; height: 110px; flex: none;
+  border-radius: calc(var(--radius) - 4px);
+  object-fit: cover;
+  background: var(--bg-alt);
+}
+.scan-card-noimg { display: grid; place-items: center; font-size: .78rem; color: var(--muted); text-align: center; }
+.scan-card-code {
+  margin: 0 0 .2rem; font-size: .78rem; font-weight: 700;
+  letter-spacing: .06em; color: var(--muted); text-transform: uppercase;
+}
+.scan-card-body h3 { margin: 0 0 .6rem; font-size: 1.08rem; }
+.scan-card-prices { display: flex; gap: 1.75rem; }
+.scan-card-prices span { display: block; font-size: .76rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.scan-card-prices strong { font-size: 1.15rem; color: var(--navy); }
+
+.scan-card-empty { text-align: center; padding: 1.5rem 1rem; }
+.scan-card-empty p { margin: 0 0 .4rem; color: var(--body); }
+
 @media (max-width: 560px) {
   body { font-size: 16px; }
   .hero-actions .btn { width: 100%; }
@@ -389,6 +468,10 @@ img { max-width: 100%; display: block; }
   .gallery-grid { grid-template-columns: 1fr; }
   .shop-grid { grid-template-columns: 1fr; }
   .wa-float { width: 54px; height: 54px; bottom: 14px; right: 14px; }
+  .scan-panel { padding: 1.3rem; }
+  .scan-card { flex-direction: column; text-align: center; }
+  .scan-manual-row { flex-direction: column; }
+  .scan-card-prices { justify-content: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -3,6 +3,10 @@
 # Original print artwork (76MB of PDFs) and source images
 photos/
 
+# Raw POS "Item Listing" exports used to build assets/data/products.json —
+# see tools/build_products.py. Huge (each ~70MB) and just a build input.
+Item Listing*.xlsx
+
 # Business details and the design spec — no need to publish these
 company_details.txt
 docs/
