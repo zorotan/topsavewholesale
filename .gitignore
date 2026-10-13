@@ -19,3 +19,6 @@ docs/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Brag video project — not part of the published site
+brag-output/

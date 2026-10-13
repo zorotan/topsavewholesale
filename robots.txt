@@ -1,0 +1,19 @@
+# https://topsavewholesale.com/
+User-agent: *
+Allow: /
+
+# AI assistants and answer engines are welcome — being cited in an AI
+# answer is how a lot of people will find a wholesaler now.
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://topsavewholesale.com/sitemap.xml
